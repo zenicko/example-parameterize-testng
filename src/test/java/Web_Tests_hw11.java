@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class HW11 {
+public class Web_Tests_hw11 {
 
     /**
      TC_11_01 Подтвердите, что на странице по базовой ссылке в правом верхнем углу

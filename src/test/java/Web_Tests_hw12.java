@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class HW12 {
+public class Web_Tests_hw12 {
 
     /**
      * TC_12_01 Подтвердите, что в меню BROWSE LANGUAGES, подменю  J,
