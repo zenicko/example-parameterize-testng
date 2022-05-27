@@ -190,11 +190,12 @@ public class Web_Tests_hw12 {
         driver.quit();
 
     }
+
     /**
-     TC_12_07 Выберите любой язык программирования (из меню BROWSE LANGUAGES) и любую версию решения
-     (из раздела Alternative Versions, если такой раздел существует  для выбранного языка)
-     Подтвердите, что пользователь может сделать закладку на это решение на сайте Reddit
-     (нажав на иконку сайта Reddit, пользователь перейдет на Логин страницу сайта Reddit)
+     * TC_12_07 Выберите любой язык программирования (из меню BROWSE LANGUAGES) и любую версию решения
+     * (из раздела Alternative Versions, если такой раздел существует  для выбранного языка)
+     * Подтвердите, что пользователь может сделать закладку на это решение на сайте Reddit
+     * (нажав на иконку сайта Reddit, пользователь перейдет на Логин страницу сайта Reddit)
      */
     @Test
     public void TC_12_07() {
@@ -217,11 +218,11 @@ public class Web_Tests_hw12 {
     }
 
     /**
-     TC_12_08 Подтвердите, что решение на языке Shakespeare входит в топ 20 всех решений,
-     в топ 10 решений на Esoteric Languages и в топ 6 решений-хитов. Но решение на языке Shakespeare
-     не входит в список топовых решений на реальных языках программирования.
-     (Можно написать одним тестом, но так, чтобы все Asserts были в конце теста.
-     Или можно написать отдельные тесты на каждый requirenment.)
+     * TC_12_08 Подтвердите, что решение на языке Shakespeare входит в топ 20 всех решений,
+     * в топ 10 решений на Esoteric Languages и в топ 6 решений-хитов. Но решение на языке Shakespeare
+     * не входит в список топовых решений на реальных языках программирования.
+     * (Можно написать одним тестом, но так, чтобы все Asserts были в конце теста.
+     * Или можно написать отдельные тесты на каждый requirenment.)
      */
     @Test
     public void TC_12_08() {
@@ -237,22 +238,22 @@ public class Web_Tests_hw12 {
 
         driver.findElement(By.cssSelector("#submenu a[href='./toplist.html']")).click();
         WebElement lenguage = driver.findElement(By.cssSelector("td a[href='language-shakespeare-664.html'"));
-        Assert.assertEquals("Shakespeare",lenguage.getText());
+        Assert.assertEquals("Shakespeare", lenguage.getText());
 
         driver.findElement(By.cssSelector("#submenu a[href='./toplist_esoteric.html']")).click();
         WebElement lenguage1 = driver.findElement(By.cssSelector("td a[href='language-shakespeare-664.html'"));
-        Assert.assertEquals("Shakespeare",lenguage1.getText());
+        Assert.assertEquals("Shakespeare", lenguage1.getText());
 
         driver.findElement(By.cssSelector("#submenu a[href='./tophits.html'")).click();
         WebElement lenguage2 = driver.findElement(By.cssSelector("td a[href='language-shakespeare-664.html'"));
-        Assert.assertEquals("Shakespeare",lenguage2.getText());
+        Assert.assertEquals("Shakespeare", lenguage2.getText());
 
         driver.quit();
     }
 
 
     /**
-     TC_12_09 Подтвердите, что существует 6 версий решений на языке программирования Java.
+     * TC_12_09 Подтвердите, что существует 6 версий решений на языке программирования Java.
      */
 
     @Test
@@ -276,19 +277,19 @@ public class Web_Tests_hw12 {
         WebElement version5 = driver.findElement(By.cssSelector("td a[href='language-java-950.html']"));
         WebElement version6 = driver.findElement(By.cssSelector("td a[href='language-java-1148.html']"));
 
-        Assert.assertEquals("(object-oriented version)",version1.getText());
-        Assert.assertEquals("standard version",version2.getText());
-        Assert.assertEquals("exception oriented",version3.getText());
-        Assert.assertEquals("bytecode-version with loader",version4.getText());
-        Assert.assertEquals("Java 5.0 object-oriented version",version5.getText());
-        Assert.assertEquals("Singing with Java Speech API",version6.getText());
+        Assert.assertEquals("(object-oriented version)", version1.getText());
+        Assert.assertEquals("standard version", version2.getText());
+        Assert.assertEquals("exception oriented", version3.getText());
+        Assert.assertEquals("bytecode-version with loader", version4.getText());
+        Assert.assertEquals("Java 5.0 object-oriented version", version5.getText());
+        Assert.assertEquals("Singing with Java Speech API", version6.getText());
 
         driver.quit();
     }
 
     /**
-     TC_12_10 Подтвердите, что самое большое количество комментариев для решений на языке Java
-     имеет версия “object-oriented version”
+     * TC_12_10 Подтвердите, что самое большое количество комментариев для решений на языке Java
+     * имеет версия “object-oriented version”
      */
     @Test
     public void TC_12_10() {
@@ -304,28 +305,28 @@ public class Web_Tests_hw12 {
         driver.findElement(By.cssSelector("#submenu li [href='j.html']")).click();
 
         driver.findElement(By.cssSelector("td a[href='language-java-3.html']")).click();
-        List <WebElement> comments = driver.findElements(By.cssSelector("div #comments p.comment"));
-        Assert.assertEquals(33,comments.size());
+        List<WebElement> comments = driver.findElements(By.cssSelector("div #comments p.comment"));
+        Assert.assertEquals(33, comments.size());
 
         driver.findElement(By.cssSelector("td a[href='language-java-4.html']"));
-        List <WebElement> comments1 = driver.findElements(By.cssSelector("div #comments p.comment"));
-        Assert.assertEquals(12,comments1.size());
+        List<WebElement> comments1 = driver.findElements(By.cssSelector("div #comments p.comment"));
+        Assert.assertEquals(12, comments1.size());
 
         driver.findElement(By.cssSelector("td a[href='language-java-866.html']"));
-        List <WebElement> comments2 = driver.findElements(By.cssSelector("div #comments p.comment"));
-        Assert.assertEquals(5,comments2.size());
+        List<WebElement> comments2 = driver.findElements(By.cssSelector("div #comments p.comment"));
+        Assert.assertEquals(5, comments2.size());
 
         driver.findElement(By.cssSelector("td a[href='language-java-1162.html']"));
-        List <WebElement> comments3 = driver.findElements(By.cssSelector("div #comments p.comment"));
-        Assert.assertEquals(10,comments3.size());
+        List<WebElement> comments3 = driver.findElements(By.cssSelector("div #comments p.comment"));
+        Assert.assertEquals(10, comments3.size());
 
         driver.findElement(By.cssSelector("td a[href='language-java-950.html']"));
-        List <WebElement> comments4 = driver.findElements(By.cssSelector("div #comments p.comment"));
-        Assert.assertEquals(3,comments4.size());
+        List<WebElement> comments4 = driver.findElements(By.cssSelector("div #comments p.comment"));
+        Assert.assertEquals(3, comments4.size());
 
         driver.findElement(By.cssSelector("td a[href='language-java-1148.html']"));
-        List <WebElement> comments5 = driver.findElements(By.cssSelector("div #comments p.comment"));
-        Assert.assertEquals(2,comments5.size());
+        List<WebElement> comments5 = driver.findElements(By.cssSelector("div #comments p.comment"));
+        Assert.assertEquals(2, comments5.size());
 
         driver.quit();
     }
