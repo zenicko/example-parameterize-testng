@@ -84,12 +84,20 @@ public class Web_Tests_hw12 {
         driver.get(url);
 
         driver.findElement(By.cssSelector("#menu [href='/abc.html']")).click();
-        List<WebElement> table = driver.findElements(By.cssSelector("#category tbody tr:first-child"));
+        List<WebElement> title = driver.findElements(By.cssSelector("#category tbody tr:first-child"));
 
         String actualResult = "";
-        for (int i = 0; i < table.size(); i++) {
-            actualResult += table.get(i).getText();
+        for (int i = 0; i < title.size(); i++) {
+            actualResult += title.get(i).getText();
         }
+        /**
+         *  List<String> expectedResult = new ArrayList<>(
+         *         Arrays.asList("Language", "Author", "Date", "Comments", "Rate"));
+         List<String> actualResult = new ArrayList<>();
+         for (WebElement title : listOfTitles) {
+         actualResult.add(title.getText());
+         }
+         */
 
         Assert.assertEquals(actualResult, "Language Author Date Comments Rate");
 
