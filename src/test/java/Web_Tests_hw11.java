@@ -39,9 +39,11 @@ public class Web_Tests_hw11 {
         System.setProperty(chromeDriver, driverPath);
         WebDriver driver = new ChromeDriver();
         step("Открыть вебсайт на базовой странице",
-                () -> driver.get(url)
+                () -> {
+                    driver.get(url);
+                }
         );
-        String actualResult =;
+        AtomicReference<String> actualResult = new AtomicReference<>();
         step("Считать заголовок в правом верхнем углу", () -> {
                     WebElement title = driver.findElement(By.cssSelector("#header h1"));
                     actualResult.set(title.getText());
@@ -52,8 +54,7 @@ public class Web_Tests_hw11 {
                     Assert.assertEquals(actualResult.get(), expectedResult);
                 }
         );
-        step("Закрыть браузер", () ->
-                driver.quit());
+        step("Закрыть браузер", driver::quit);
     }
 
     /**
